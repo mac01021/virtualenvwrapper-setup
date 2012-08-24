@@ -1,0 +1,6 @@
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export WORKON_HOME=$DIR
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+source `which virtualenvwrapper.sh`
+
+
