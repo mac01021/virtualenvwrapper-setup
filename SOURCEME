@@ -3,4 +3,15 @@ export WORKON_HOME=$DIR
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 source `which virtualenvwrapper.sh`
 
+#with no error checking whatsoever:
+gitenv () {
+	DIR=`pwd`
+	mkvirtualenv $2
+	workon $2
+	git clone $1 project
+	cd project
+	pip install -r requirements/development.req
+	deactivate
+	cd $DIR
+}
 
